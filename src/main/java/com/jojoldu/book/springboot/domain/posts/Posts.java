@@ -1,6 +1,7 @@
 package com.jojoldu.book.springboot.domain.posts;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.jojoldu.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import javax.persistence.Id;
 @Getter
 @NoArgsConstructor
 @Entity //JPA 어노테이션
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

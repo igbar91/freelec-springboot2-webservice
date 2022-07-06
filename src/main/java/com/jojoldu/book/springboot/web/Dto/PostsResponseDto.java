@@ -1,7 +1,7 @@
 package com.jojoldu.book.springboot.web.Dto;
 
 import com.jojoldu.book.springboot.domain.posts.Posts;
-import jdk.nashorn.internal.objects.annotations.Getter;
+import lombok.Getter;
 
 
 @Getter

@@ -4,6 +4,7 @@ package com.jojoldu.book.springboot.web;
 import com.jojoldu.book.springboot.domain.posts.Posts;
 import com.jojoldu.book.springboot.domain.posts.PostsRepository;
 import com.jojoldu.book.springboot.web.Dto.PostsSaveRequestDto;
+import com.jojoldu.book.springboot.web.Dto.PostsUpdateRequestDto;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -89,6 +92,15 @@ public class PostsApiControllerTest {
         HttpEntity<PostsUpdateRequestDto> requestEntity = new HttpEntity<>(requestDto);
 
         //when
+        ResponseEntity<Long> responseEntity = restTemplate.exchange(url, HttpMethod.PUT,
+                requestEntity, Long.class);
 
+        //then
+        assertThat(responseEntity.getStatusCode(), is(equalTo(HttpStatus.OK)));
+        assertThat(responseEntity.getBody(), greaterThan(0L));
+
+        List<Posts> all = postsRepository.findAll();
+        assertThat(all.get(0).getTitle(), is(equalTo(expectedTitle)));
+        assertThat(all.get(0).getContent(), is(equalTo(expectedContent)));
     }
 }
