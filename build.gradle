@@ -29,6 +29,12 @@ dependencies {
     implementation 'junit:junit:4.13.1'
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 
+    //Spring Data Jpa
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.projectlombok:lombok')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa') //전체적 버전관리
+    implementation('com.h2database:h2') // 인메모리 관계형 데이터베이스
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 // 기본 코드들
 /*
