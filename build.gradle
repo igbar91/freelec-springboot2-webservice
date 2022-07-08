@@ -38,6 +38,9 @@ dependencies {
 
     //mustache
     implementation('org.springframework.boot:spring-boot-starter-mustache')
+
+    //springSecuiry
+    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
 }
 // 기본 코드들
 /*
