@@ -43,6 +43,8 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
     //spring jdbc
     implementation('org.springframework.session:spring-session-jdbc')
+    //springSecurityTest
+    implementation('org.springframework.security:spring-security-test')
 }
 // 기본 코드들
 /*
