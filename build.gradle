@@ -33,7 +33,11 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('org.projectlombok:lombok')
     implementation('org.springframework.boot:spring-boot-starter-data-jpa') //전체적 버전관리
-    implementation('com.h2database:h2') // 인메모리 관계형 데이터베이스
+
+    // 인메모리 관계형 데이터베이스
+    implementation('com.h2database:h2')
+    implementation('org.mariadb.jdbc:mariadb-java-client')
+
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 
     //mustache
