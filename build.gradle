@@ -50,6 +50,9 @@ dependencies {
     //springSecurityTest
     implementation('org.springframework.security:spring-security-test')
 }
+
+version '1.0.1-SNAPSHOT'
+
 // 기본 코드들
 /*
 plugins {
