@@ -21,8 +21,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers().frameOptions().disable()
                 .and()
                     .authorizeRequests()
-                    .antMatchers("/","/css/**", "/images/**", "/js/**", "/h2-console/**", "/api/v1/**").permitAll()
-                    //.antMatchers("/api/v1/**").hasRole(Role.USER.name())
+                    .antMatchers("/","/css/**", "/images/**", "/js/**", "/h2-console/**", "/api/v1/**", "/profile").permitAll()
+                    //.antMatchers("/api/v1/**").hasRole(Role.USER.name())    > permitAll에 추가함
                     .anyRequest().authenticated()
                 .and()
                     .logout()
