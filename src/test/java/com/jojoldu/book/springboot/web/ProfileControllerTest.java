@@ -31,7 +31,7 @@ public class ProfileControllerTest {
         String expected = "default";
 
         ResponseEntity<String> response = restTemplate.getForEntity("/profile", String.class);
-        assertThat(response.getStatusCode(), equalTo(HttpStatus.OK);
-        assertThat(response.getBody(), equalTo(expected);
+        assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
+        assertThat(response.getBody(), equalTo(expected));
     }
 }

@@ -23,7 +23,7 @@ public class ProfileControllerUnitTest {
         //when
         String profile = controller.profile();
         //then
-        assertThat(profile, equalTo(expectedProfile);
+        assertThat(profile, equalTo(expectedProfile));
     }
 
     @Test
@@ -40,7 +40,7 @@ public class ProfileControllerUnitTest {
         //when
         String profile = controller.profile();
         //then
-        assertThat(profile, equalTo(expectedProfile);
+        assertThat(profile, equalTo(expectedProfile));
     }
 
     @Test
@@ -53,6 +53,6 @@ public class ProfileControllerUnitTest {
         //when
         String profile = controller.profile();
         //then
-        assertThat(profile, equalTo(expectedProfile);
+        assertThat(profile, equalTo(expectedProfile));
     }
 }
