@@ -21,9 +21,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers().frameOptions().disable()
                 .and()
                     .authorizeRequests()
-                    .antMatchers("/","/css/**", "/images/**", "/js/**", "/h2-console/**", "/api/v1/**","/profile").permitAll()
-                    //.antMatchers("/api/v1/**").hasRole(Role.USER.name())
-                    .anyRequest().authenticated()
+                    .antMatchers("/","/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile", "/api/v1/**").permitAll()
+                    //.antMatchers("/api/v1/**").hasRole(Role.USER.name()) GUEST,USER 여부 상관없이 접속가능
+                    //.anyRequest().authenticated() 메뉴가 새로 생성됨에 따라 로그인 없이도 페이지 접속가능
                 .and()
                     .logout()
                     .logoutSuccessUrl("/")
