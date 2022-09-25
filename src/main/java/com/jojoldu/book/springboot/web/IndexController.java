@@ -3,6 +3,8 @@ package com.jojoldu.book.springboot.web;
 
 import com.jojoldu.book.springboot.config.auth.LoginUser;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
+import com.jojoldu.book.springboot.domain.MovieInfo.MovieInfo;
+import com.jojoldu.book.springboot.domain.MovieInfo.MovieInfoRepository;
 import com.jojoldu.book.springboot.service.movieInfo.MovieInfoService;
 import com.jojoldu.book.springboot.service.posts.PostsService;
 import com.jojoldu.book.springboot.web.Dto.PostsResponseDto;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
@@ -21,11 +24,12 @@ public class IndexController {
     private final PostsService postsService;
     private final MovieInfoService movieInfoService;
     private final HttpSession httpSession;
+    private final MovieInfoRepository movieInfoRepository;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user){
 
-        model.addAttribute("movieInfo", movieInfoService.findAllDesc());
+        model.addAttribute("movieInfo", movieInfoRepository.findTop4ByOrderByScreenDateDesc());
 
         //userName을 Model 에 저장
         //SessionUser user = (SessionUser)httpSession.getAttribute("user");

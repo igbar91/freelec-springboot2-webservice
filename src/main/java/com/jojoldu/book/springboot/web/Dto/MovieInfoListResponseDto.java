@@ -14,7 +14,7 @@ public class MovieInfoListResponseDto {
     private int country_id;
     private String profile_image;
     private String name;
-    private String screen_date;
+    private String screenDate;
     private int screen_time;
     private String age_limit;
     private String director;
@@ -28,7 +28,7 @@ public class MovieInfoListResponseDto {
         this.country_id = entity.getCountry_id();
         this.profile_image = entity.getProfile_image();
         this.name = entity.getName();
-        this.screen_date = entity.getScreen_date();
+        this.screenDate = entity.getScreenDate();
         this.screen_time = entity.getScreen_time();
         this.age_limit = entity.getAge_limit();
         this.director = entity.getDirector();
