@@ -1,6 +1,7 @@
 package com.jojoldu.book.springboot.domain.MovieInfo;
 
 
+import com.jojoldu.book.springboot.domain.GenreInfo.GenreInfo;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,25 +23,22 @@ public class MovieInfo {
     private Long id;
 
     @Column(length = 11, nullable = false)
-    private int genre_id;
-
-    @Column(length = 11, nullable = false)
-    private int country_id;
+    private int countryId;
 
     @Column(length = 200, nullable = true)
-    private String profile_image;
+    private String profileImage;
 
     @Column(length = 200, nullable = false)
     private String name;
 
     @Column(length = 200, nullable = false)
-    private int screen_time;
+    private int screenTime;
 
     @Column(nullable = false)
-    private String screen_date;
+    private String screenDate;
 
     @Column(length = 50, nullable = false)
-    private String age_limit;
+    private String ageLimit;
 
     @Column(length = 50, nullable = false)
     private String director;
@@ -51,18 +49,24 @@ public class MovieInfo {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String summary;
 
+    @OneToOne
+    @JoinColumn(name = "genreId") //MovieInfo에 적용할 column name : genre_id, 조인할 컬럼명은 특정하지 않으면 자동으로 pk(genreInfo)랑 연결해준다.
+    private GenreInfo genreInfo;//@Column(length = 11, nullable = false)
+
     @Builder
-    public MovieInfo(int genre_id,int country_id, String profile_image, String name, String screen_date, int screen_time, String age_limit, String director, String caster, String summary){
-        this.genre_id = genre_id;
-        this.country_id = country_id;
-        this.profile_image = profile_image;
+    public MovieInfo(int countryId, String profileImage, String name, String screenDate, int screenTime, String ageLimit, String director, String caster, String summary, GenreInfo genreInfo){
+        this.countryId = countryId;
+        this.profileImage = profileImage;
         this.name = name;
-        this.screen_date = screen_date;
-        this.screen_time = screen_time;
-        this.age_limit = age_limit;
+        this.screenDate = screenDate;
+        this.screenTime = screenTime;
+        this.ageLimit = ageLimit;
         this.director = director;
         this.caster = caster;
         this.summary = summary;
+        this.genreInfo = genreInfo;
+
     }
+
 
 }

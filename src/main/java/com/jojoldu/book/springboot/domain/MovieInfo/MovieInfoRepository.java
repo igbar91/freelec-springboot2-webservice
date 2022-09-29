@@ -11,7 +11,7 @@ import java.util.List;
 //단순히 인터페이스를 생성 후 , JpaRepository<Entity클래스, PK타입>를 상속하면 기본적인 CRUD메소드가 자동으로 생성.
 public interface MovieInfoRepository extends JpaRepository<MovieInfo, Long> {
 
-    @Query("SELECT p FROM MovieInfo p ORDER BY p.id DESC")
+    @Query("SELECT a From MovieInfo a ORDER BY a.screenDate DESC, a.name")
     List<MovieInfo> findAllDesc();
 
     List<MovieInfo> findTop4ByOrderByScreenDateDesc();
