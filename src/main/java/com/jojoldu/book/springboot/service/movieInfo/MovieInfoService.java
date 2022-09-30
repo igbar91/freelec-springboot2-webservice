@@ -1,5 +1,6 @@
 package com.jojoldu.book.springboot.service.movieInfo;
 
+import com.jojoldu.book.springboot.domain.MovieInfo.MovieInfo;
 import com.jojoldu.book.springboot.domain.MovieInfo.MovieInfoRepository;
 import com.jojoldu.book.springboot.web.Dto.MovieInfoListResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -21,4 +22,10 @@ public class MovieInfoService {
                 .map(MovieInfoListResponseDto::new)
                 .collect(Collectors.toList());
     }
+
+    public MovieInfoListResponseDto findById(Long id){
+        MovieInfo entity = movieInfoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
+        return new MovieInfoListResponseDto(entity);
+    }
+
 }
