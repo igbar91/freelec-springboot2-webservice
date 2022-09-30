@@ -1,6 +1,7 @@
 package com.jojoldu.book.springboot.domain.MovieInfo;
 
 
+import com.jojoldu.book.springboot.domain.CountryInfo.CountryInfo;
 import com.jojoldu.book.springboot.domain.GenreInfo.GenreInfo;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,8 +23,9 @@ public class MovieInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 11, nullable = false)
-    private int countryId;
+    @OneToOne
+    @JoinColumn(name = "countryId")
+    CountryInfo countryInfo;
 
     @Column(length = 200, nullable = true)
     private String profileImage;
@@ -54,8 +56,8 @@ public class MovieInfo {
     private GenreInfo genreInfo;//@Column(length = 11, nullable = false)
 
     @Builder
-    public MovieInfo(int countryId, String profileImage, String name, String screenDate, int screenTime, String ageLimit, String director, String caster, String summary, GenreInfo genreInfo){
-        this.countryId = countryId;
+    public MovieInfo(CountryInfo countryInfo, String profileImage, String name, String screenDate, int screenTime, String ageLimit, String director, String caster, String summary, GenreInfo genreInfo){
+        this.countryInfo = countryInfo;
         this.profileImage = profileImage;
         this.name = name;
         this.screenDate = screenDate;

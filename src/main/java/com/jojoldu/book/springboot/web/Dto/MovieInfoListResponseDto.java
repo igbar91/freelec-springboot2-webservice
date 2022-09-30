@@ -1,6 +1,7 @@
 package com.jojoldu.book.springboot.web.Dto;
 
 
+import com.jojoldu.book.springboot.domain.CountryInfo.CountryInfo;
 import com.jojoldu.book.springboot.domain.GenreInfo.GenreInfo;
 import com.jojoldu.book.springboot.domain.MovieInfo.MovieInfo;
 import com.jojoldu.book.springboot.domain.posts.Posts;
@@ -11,7 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 public class MovieInfoListResponseDto {
     private Long id;
-    private int countryId;
+    private CountryInfo countryInfo;
     private String profileImage;
     private String name;
     private String screenDate;
@@ -24,7 +25,7 @@ public class MovieInfoListResponseDto {
 
     public MovieInfoListResponseDto(MovieInfo entity){
         this.id = entity.getId();
-        this.countryId = entity.getCountryId();
+        this.countryInfo = entity.getCountryInfo();
         this.profileImage = entity.getProfileImage();
         this.name = entity.getName();
         this.screenDate = entity.getScreenDate();
