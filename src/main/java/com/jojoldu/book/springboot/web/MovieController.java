@@ -36,9 +36,12 @@ public class MovieController {
     }
 
     @GetMapping("/movie/view/{id}")
-    public String movieView(Model model, @PathVariable Long id){
+    public String movieView(Model model, @PathVariable Long id, @LoginUser SessionUser user){
         MovieInfoListResponseDto dto = movieInfoService.findById(id);
         model.addAttribute("view", dto);
+        if(user != null){
+            model.addAttribute("userName", user.getName());
+        }
         return "movie-view";
     }
 }
