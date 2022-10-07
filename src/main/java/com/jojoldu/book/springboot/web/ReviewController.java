@@ -3,7 +3,7 @@ package com.jojoldu.book.springboot.web;
 
 import com.jojoldu.book.springboot.config.auth.LoginUser;
 import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
-import com.jojoldu.book.springboot.service.posts.PostsService;
+import com.jojoldu.book.springboot.service.movieReview.MovieReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,13 +15,15 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class ReviewController {
 
-    private final PostsService postsService;
+    private final MovieReviewService movieReviewService;
     private final HttpSession httpSession;
 
     @GetMapping("/review")
     public String review(Model model, @LoginUser SessionUser user){
 
-        model.addAttribute("posts", postsService.findAllDesc());
+        model.addAttribute("list", movieReviewService.findAllDesc());
+        long totalCount = movieReviewService.getAllCount();
+        model.addAttribute("totalCount", totalCount);
 
         //userName을 Model 에 저장
         //SessionUser user = (SessionUser)httpSession.getAttribute("user");
