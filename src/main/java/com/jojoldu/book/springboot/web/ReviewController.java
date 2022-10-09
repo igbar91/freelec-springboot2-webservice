@@ -30,7 +30,7 @@ public class ReviewController {
         if(user != null){
             model.addAttribute("userName", user.getName());
         }
-        return "review";
+        return "review-list";
     }
 
 }
