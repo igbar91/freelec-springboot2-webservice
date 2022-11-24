@@ -23,9 +23,15 @@ public class MovieInfoService {
                 .collect(Collectors.toList());
     }
 
-    public MovieInfoListResponseDto findById(Long id){
+    public MovieInfoListResponseDto findById(int id){
         MovieInfo entity = movieInfoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
         return new MovieInfoListResponseDto(entity);
     }
+
+    @Transactional(readOnly = true)
+    public int getAllCount(){
+        return movieInfoRepository.getAllCount();
+    }
+
 
 }

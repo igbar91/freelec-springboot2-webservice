@@ -4,14 +4,13 @@ package com.jojoldu.book.springboot.web.Dto;
 import com.jojoldu.book.springboot.domain.CountryInfo.CountryInfo;
 import com.jojoldu.book.springboot.domain.GenreInfo.GenreInfo;
 import com.jojoldu.book.springboot.domain.MovieInfo.MovieInfo;
-import com.jojoldu.book.springboot.domain.posts.Posts;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
 
 @Getter
 public class MovieInfoListResponseDto {
-    private Long id;
+    private int id;
     private CountryInfo countryInfo;
     private String profileImage;
     private String name;

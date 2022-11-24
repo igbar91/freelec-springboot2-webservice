@@ -89,6 +89,7 @@
 <div class="col-lg-8 mx-auto p-4 py-md-5">
     {{>layout/header}}
     <main>
+        <img src="..." class="img-thumbnail" alt="...">
         <h1>{{view.name}}</h1>
         <p class="fs-5 col-md-8">네티즌 평점 내평점</p>
         <p class="fs-5 col-md-8">{{view.genreInfo.genre}}|{{view.countryInfo.codeKr}}|{{view.screenTime}}분|{{view.screenDate}}|{{view.ageLimit}}</p>
@@ -103,11 +104,17 @@
             </div>
 
             <div class="col-md-6">
-                <h2>리뷰</h2>
-                <p>Read more detailed instructions and documentation on using or contributing to Bootstrap.</p>
+                <h2>리뷰(총 {{reviewSize}}건)</h2>
+                {{^review}}
+                    <p>등록된 리뷰가 없습니다.</p>
+                {{/review}}
+                {{#review}}
+                    <p><a href="/review">{{title}}</a></p>
+                    <p>{{content}}</p>
+                    <hr>
+                {{/review}}
                 <ul class="icon-list ps-0">
-                    <li class="d-flex align-items-start mb-1"><a href="/docs/5.2/getting-started/introduction/">Bootstrap quick start guide</a></li>
-                    <li class="d-flex align-items-start mb-1"><a href="/docs/5.2/getting-started/webpack/">Bootstrap Webpack guide</a></li>
+                    <li class="d-flex align-items-start mb-1"><a href="/review">리뷰 더보기</a></li>
                 </ul>
             </div>
         </div>

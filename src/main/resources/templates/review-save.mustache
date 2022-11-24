@@ -1,0 +1,54 @@
+{{>layout/header}}
+
+<h1 style="text-align:center;">게시글 등록</h1>
+<div class="col-md-12">
+    <div class="col-md-10">
+        <form>
+            <div class="form-group">
+                <label for="movie">영화이름</label>
+                <select id="movie">
+                    {{#movieList}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/movieList}}
+                    {{^movieList}}
+                        <option value="">선택가능한 옵션이 없습니다.</option>
+                    {{/movieList}}
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label for="title">제목</label>
+                <input type="text" class="form-control" id="title">
+            </div>
+            <h5>별점</h5>
+            <div class="form-group">
+                <input type="radio" name="score" value="1">
+                <label class="form-check-label" for="score1">1</label>
+                <input type="radio" name="score" value="2">
+                <label class="form-check-label" for="score2">2</label>
+                <input type="radio" name="score" value="3">
+                <label class="form-check-label" for="score3">3</label>
+                <input type="radio" name="score" value="4">
+                <label class="form-check-label" for="score4">4</label>
+                <input type="radio" name="score" value="5" checked>
+                <label class="form-check-label" for="score5">5</label>
+            </div>
+            <h5>공개여부</h5>
+            <div class="form-group">
+                <input type="radio" name="openYn" value="Y" checked>
+                <label class="form-check-label" for="openY">예</label>
+                <input type="radio" name="openYn" value="N">
+                <label class="form-check-label" for="openN">아니오</label>
+            </div>
+            <div class="form-group">
+                <label for="content">리뷰</label>
+                <textarea class="form-control" id="content"></textarea>
+            </div>
+        </form>
+        <hr>
+        <button type="button" class="btn btn-primary" id="btn-save">등록</button>
+        <a href="/myReviews" role="button" class="btn btn-secondary">취소</a>
+    </div>
+</div>
+<hr>
+{{>layout/footer}}

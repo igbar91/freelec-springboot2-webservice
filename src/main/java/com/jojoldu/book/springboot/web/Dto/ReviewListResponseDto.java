@@ -5,23 +5,23 @@ import com.jojoldu.book.springboot.domain.MovieReview.MovieReview;
 import lombok.Getter;
 
 @Getter
-public class MovieReviewResponseDto {
-    private long id;
-    private long userId;
-    private long movieId;
+public class ReviewListResponseDto {
+    private int id;
+    private String userId;
+    private MovieInfo movieInfo;
     private String title;
     private String content;
     private int score;
     private int viewCount;
     private String regDate;
     private String modifyDate;
-    private Character openYn;
-    private Character deleteYn;
+    private String openYn;
+    private String deleteYn;
 
-    public MovieReviewResponseDto(MovieReview entity){
+    public ReviewListResponseDto(MovieReview entity){
         this.id = entity.getId();
         this.userId = entity.getUserId();
-        this.movieId = entity.getMovieId();
+        this.movieInfo = entity.getMovieInfo();
         this.title = entity.getTitle();
         this.content = entity.getContent();
         this.score = entity.getScore();

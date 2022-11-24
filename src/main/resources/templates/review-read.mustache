@@ -1,0 +1,43 @@
+{{>layout/header}}
+
+<h1 style="text-align:center;">게시글 상세</h1>
+<div class="col-md-12">
+    <div class="col-md-10">
+        <form>
+            <input type="hidden" name="id" id="id" value={{view.id}}>
+            <!-- mustache는 if문을 제공하지않기에 여기에 로딩값을 담고 javascipt로 value checked-->
+            <input type="hidden" name="defScore" id="defScore" value="{{view.score}}">
+            <input type="hidden" name="postId" id="postId" value="{{view.movieInfo.id}}">
+            <div class="form-group">
+                <label for="movie">영화이름</label>
+                <select id="movie">
+                    {{#movieList}}
+                        <option value="{{id}}" disabled>{{name}}</option>
+                    {{/movieList}}
+                    {{^movieList}}
+                        <option value="">선택가능한 옵션이 없습니다.</option>
+                    {{/movieList}}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="title">제목</label>
+                <input type="text" class="form-control" id="title" value="{{view.title}}" readonly>
+            </div>
+            <h5>별점</h5>
+            <div class="form-group">
+                <div class="starScore" data-max="5" data-rate="{{view.score}}"></div>
+            </div>
+            <div class="form-group">
+                <label for="content">리뷰</label> By {{view.userId}} at {{view.regDate}}
+                <textarea class="form-control" id="content" readonly>{{view.content}}</textarea>
+            </div>
+        </form>
+        <hr>
+        <a href="/review" role="button" class="btn btn-secondary">뒤로가기</a>
+    </div>
+</div>
+<hr>
+{{>layout/footer}}
+<!--별 플러그인 출처 : https://www.youtube.com/watch?v=H-d0W0t7FKI-->
+<script src="https://cdn.jsdelivr.net/gh/hiphop5782/score@latest/score.js"></script>
+<script src="/js/app/review-read.js"></script>

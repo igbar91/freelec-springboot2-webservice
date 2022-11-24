@@ -3,14 +3,19 @@ package com.jojoldu.book.springboot.domain.MovieInfo;
 
 import com.jojoldu.book.springboot.domain.CountryInfo.CountryInfo;
 import com.jojoldu.book.springboot.domain.GenreInfo.GenreInfo;
+import com.jojoldu.book.springboot.domain.MovieReview.MovieReview;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+@Setter // testCode
 @Getter
 @NoArgsConstructor //롬복 어노테이션
 @Entity //jpa의 어노테이션
@@ -21,7 +26,7 @@ public class MovieInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @OneToOne
     @JoinColumn(name = "countryId")
@@ -53,7 +58,12 @@ public class MovieInfo {
 
     @OneToOne
     @JoinColumn(name = "genreId") //MovieInfo에 적용할 column name : genre_id, 조인할 컬럼명은 특정하지 않으면 자동으로 pk(genreInfo)랑 연결해준다.
-    private GenreInfo genreInfo;//@Column(length = 11, nullable = false)
+    GenreInfo genreInfo;//@Column(length = 11, nullable = false)
+
+    //양방향매핑 하나의 post는 여러 리뷰게시글을 가진다.
+    @OneToMany(mappedBy = "movieInfo")
+    private List<MovieReview> movieReviews = new ArrayList<>();
+
 
     @Builder
     public MovieInfo(CountryInfo countryInfo, String profileImage, String name, String screenDate, int screenTime, String ageLimit, String director, String caster, String summary, GenreInfo genreInfo){

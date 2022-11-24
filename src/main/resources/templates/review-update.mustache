@@ -1,0 +1,61 @@
+{{>layout/header}}
+
+<h1 style="text-align:center;">게시글 수정</h1>
+<div class="col-md-12">
+    <div class="col-md-10">
+        <form>
+            <input type="hidden" name="id" id="id" value={{view.id}}>
+            <!-- mustache는 if문을 제공하지않기에 여기에 로딩값을 담고 javascipt로 value checked-->
+            <input type="hidden" name="defScore" id="defScore" value="{{view.score}}">
+            <input type="hidden" name="defOpen" id="defOpen" value="{{view.openYn}}">
+            <input type="hidden" name="postId" id="postId" value="{{view.movieInfo.id}}">
+            <div class="form-group">
+                <label for="movie">영화이름</label>
+                <select id="movie">
+                    {{#movieList}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/movieList}}
+                    {{^movieList}}
+                        <option value="">선택가능한 옵션이 없습니다.</option>
+                    {{/movieList}}
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label for="title">제목</label>
+                <input type="text" class="form-control" id="title" value="{{view.title}}">
+            </div>
+            <h5>별점</h5>
+            <div class="form-group">
+                <input type="radio" name="score" id="score1" value="1">
+                <label class="form-check-label" for="score1">1</label>
+                <input type="radio" name="score" id="score2" value="2">
+                <label class="form-check-label" for="score2">2</label>
+                <input type="radio" name="score" id="score3" value="3">
+                <label class="form-check-label" for="score3">3</label>
+                <input type="radio" name="score" id="score4" value="4">
+                <label class="form-check-label" for="score4">4</label>
+                <input type="radio" name="score" id="score5" value="5">
+                <label class="form-check-label" for="score5">5</label>
+            </div>
+            <h5>공개여부</h5>
+            <div class="form-group">
+                <input type="radio" name="openYn" id="openYn1" value="Y">
+                <label class="form-check-label" for="openY">예</label>
+                <input type="radio" name="openYn" id="openYn2" value="N">
+                <label class="form-check-label" for="openN">아니오</label>
+            </div>
+            <div class="form-group">
+                <label for="content">리뷰</label>
+                <textarea class="form-control" id="content">{{view.content}}</textarea>
+            </div>
+        </form>
+        <hr>
+        <button type="button" class="btn btn-primary" id="btn-update">수정</button>
+        <button type="button" class="btn btn-primary" id="btn-delete">삭제</button>
+        <a href="/myReviews" role="button" class="btn btn-secondary">취소</a>
+    </div>
+</div>
+<hr>
+{{>layout/footer}}
+<script src="/js/app/review-update.js"></script>
