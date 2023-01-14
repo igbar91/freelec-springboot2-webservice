@@ -1,14 +1,14 @@
 # freelec-springboot2-webservice
-스프링부트 + 머스타치 파싱_영화 예매 사이트
+ 스프링부트 + 머스타치 파싱_영화 예매 사이트
 
 
 ## :sunny:프로젝트 소개
-스프링 부트와 AWS로 혼자 구현하는 웹 서비스 책에 기반하여
-네이버 영화 사이트를 벤치마킹 하였습니다.
+ 스프링 부트와 AWS로 혼자 구현하는 웹 서비스 책에 기반하여
+ 네이버 영화 사이트를 벤치마킹 하였습니다.
 
 
 ## :hourglass:개발 기간 
-* 22.07.09일 - 22.11.19일
+ * 22.07.09일 - 22.11.19일
 
 
 ### 개발 진도 
@@ -27,20 +27,20 @@
  
  
  ## :hatched_chick:주요 기능
- - 메인페이지
- - 네이버 로그인 API 연동
- - 상영작 페이지
- - 리뷰 페이지(CRUD)
- - 마이 페이지
- - 부트 스트랩 프레임워크 활용
- - 별점 CSS 플러그인
+  - 메인페이지
+  - 네이버 로그인 API 연동
+  - 상영작 페이지
+  - 리뷰 페이지(CRUD)
+  - 마이 페이지
+  - 부트 스트랩 프레임워크 활용
+  - 별점 CSS 플러그인
  
  
  ## :green_book:기획
  
  
  ### 디자인 설계
- [naverMoviePlan.pdf](https://github.com/igbar91/freelec-springboot2-webservice/files/10416291/naverMoviePlan.pdf)
+  [naverMoviePlan.pdf](https://github.com/igbar91/freelec-springboot2-webservice/files/10416291/naverMoviePlan.pdf)
  
  ### DB 설계
  ![naverMovie](https://user-images.githubusercontent.com/69234252/212443669-18ebf572-f9cc-4b48-89b7-f7b9a44872f7.png)
