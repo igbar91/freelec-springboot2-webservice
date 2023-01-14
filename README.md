@@ -7,7 +7,7 @@
 네이버 영화 사이트를 벤치마킹 하였습니다.
 
 
-## 개발 기간 
+## :hourglass:개발 기간 
 * 22.07.09일 - 22.11.19일
 
 
@@ -26,7 +26,7 @@
  - **ORM** : JPA 
  
  
- ## 주요 기능
+ ## :hatched_chick:주요 기능
  - 메인페이지
  - 네이버 로그인 API 연동
  - 상영작 페이지
@@ -36,7 +36,7 @@
  - 별점 CSS 플러그인
  
  
- ## 기획
+ ## :green_book:기획
  
  
  ### 디자인 설계
@@ -45,7 +45,7 @@
  ### DB 설계
  ![naverMovie](https://user-images.githubusercontent.com/69234252/212443669-18ebf572-f9cc-4b48-89b7-f7b9a44872f7.png)
  
- ## 테스트
+ ## :fries:테스트
  https://user-images.githubusercontent.com/69234252/212447561-0bcdbaab-e0dd-4aa3-b295-593d0b715e5e.mp4
  
  
