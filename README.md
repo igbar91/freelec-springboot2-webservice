@@ -46,7 +46,7 @@
  ![naverMovie](https://user-images.githubusercontent.com/69234252/212443669-18ebf572-f9cc-4b48-89b7-f7b9a44872f7.png)
  
  ## 테스트
- 
+ https://user-images.githubusercontent.com/69234252/212447561-0bcdbaab-e0dd-4aa3-b295-593d0b715e5e.mp4
  
  
  
