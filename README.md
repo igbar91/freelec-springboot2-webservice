@@ -40,10 +40,10 @@
  
  
  ### 디자인 설계
- 
+ [naverMoviePlan.pdf](https://github.com/igbar91/freelec-springboot2-webservice/files/10416291/naverMoviePlan.pdf)
  
  ### DB 설계
- 
+ ![naverMovie](https://user-images.githubusercontent.com/69234252/212443669-18ebf572-f9cc-4b48-89b7-f7b9a44872f7.png)
  
  ## 테스트
  
